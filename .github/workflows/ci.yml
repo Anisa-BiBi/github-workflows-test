@@ -24,8 +24,8 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew build
 
-    - name: Rename JAR to static name
-      run: mv build/libs/*.jar build/libs/app.jar
+    - name: Print exact JAR name
+      run: find build/libs -name "*.jar"
 
     - name: Build and Push Docker Image
       uses: mr-smithers-excellent/docker-build-push@v4
