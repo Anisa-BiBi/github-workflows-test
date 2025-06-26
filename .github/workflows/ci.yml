@@ -12,8 +12,11 @@ on:
 jobs:
   build-java:
 
-    runs-on: ubuntu-latest
-    
+    runs-on: ${{matrix.os}}
+    strategy:
+      matrix:
+          os: [unubtu-latest, windows-latest, macOSp-latest]
+        
     steps:
     - uses: actions/checkout@v2
 
