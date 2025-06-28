@@ -23,8 +23,8 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew build
 
-    - name: Rename JAR
-      run: mv build/libs/*.jar build/libs/app.jar
+    - name: Print exact JAR name
+      run: find build/libs -name "*.jar"
 
     - name: Docker login
       run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
